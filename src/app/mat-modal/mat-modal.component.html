@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Información detallada</h2>
+<div mat-dialog-content>
+    <!-- <p><b>ID: </b> {{ data.contacto_id }} </p> -->
+    <p><b>Tema de interés: </b> {{ data.tema_id }}</p>
+    <p><b>Nombre: </b> {{ data.nombre }} </p>
+    <p><b>Email: </b> {{ data.email }} </p>
+    <p><b>Teléfono: </b> {{ data.telefono }} </p>
+    <p><b>Fecha de Registro: </b> {{ data.fec_registro | date:'dd/MM/yyyy' }} </p>
+    <p><b>Origen: </b> {{ data.origen }} </p>
+
+    <p><b>Comentario: </b>{{ data.comment }}</p>
+    <!-- <mat-form-field>
+        <input matInput [(ngModel)]="data.animal">
+    </mat-form-field> -->
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Aceptar</button>
+    <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Aceptar</button> -->
+</div>

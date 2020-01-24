@@ -1,0 +1,49 @@
+<div class="heigth-100" flex layout="row">
+    <mat-sidenav-container>
+        <mat-sidenav-content>
+            <mat-toolbar color="primary">
+                <div>
+                    <a>
+                        Respuestas de "Contáctanos" (farmaciasguadalajara.com)
+                    </a>
+                </div>
+            </mat-toolbar>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    <!-- Inicio de la tabla -->
+    <div class="heigth-100-imp" flex> <!--mat-elevation-z8-->
+        <table mat-table [dataSource]="dataSource" matSort>
+            <!-- Position Column -->
+            <ng-container matColumnDef="contacto_id">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.contacto_id}} </td>
+            </ng-container>
+            <!-- Nombre Column -->
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+            </ng-container>
+            <!-- Correo Column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Correo </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+            <!-- Fecha Column -->
+            <ng-container matColumnDef="fec_registro">
+                <th mat-header-cell *matHeaderCellDef> Fecha Registro </th>
+                <td mat-cell *matCellDef="let element"> {{ element.fec_registro | date:'dd/MM/yyyy' }} </td>
+            </ng-container>
+            <!-- Expanded Content Column - The detail row is made up of this one column -->
+            <ng-container matColumnDef="expandedDetail">
+                <mat-cell *matCellDef="let element">
+                    {{ element.comentario }}
+                </mat-cell>
+            </ng-container>
+            <!-- Columns and rows (NEEDED, DO NOT REMOVE) -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDialog(row)"></tr>
+        </table>
+        <!-- Fin de la tabla -->
+        <mat-paginator [pageSizeOptions]="[15, 30, 45, 100]"></mat-paginator>
+    </div>
+</div>

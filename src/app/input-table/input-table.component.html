@@ -1,0 +1,65 @@
+<div class="my-2 mx-5">
+    <form class="example-form">
+        <div>
+            <mat-form-field class="mr-2">
+                <input matInput placeholder="Escriba el ID">
+            </mat-form-field>
+            <button mat-raised-button>Enviar</button>
+        </div>
+    </form>
+    <div>
+        <p>
+            Tema de interés:
+            <span>
+                {{ customerModel[0].get('tema_id').value != null ?
+                (customerModel[0].get('tema_id').value) : ("No disponible") }}
+            </span>
+        </p>
+    </div>
+    <div>
+        <h3><b>Inforación de contacto. </b></h3>
+        <p>
+            Nombre User:
+            <span>
+                {{ customerModel[0].get('nombre').value }}
+            </span>
+        </p>
+        <p>
+            Correo:
+            <span>
+                {{ customerModel[0].get('telefono').value != null ?
+                (customerModel[0].get('telefono').value) : ("No disponible") }}
+            </span>
+        </p>
+        <p>
+            Teléfono:
+            <span>
+                {{ customerModel[0].get('email').value != null ?
+                (customerModel[0].get('email').value) : ("No disponible") }}
+            </span>
+        </p>
+        <p>
+            Tema del mensaje:
+            <span>
+                {{ customerModel[0].get('tema_id').value != null ?
+                (customerModel[0].get('tema_id').value) : ("No disponible") }}
+            </span>
+        </p>
+    </div>
+    <div>
+        <h3><b>Mensaje: </b></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras orci turpis, porttitor vitae bibendum vitae,
+            laoreet et mi. Cras tincidunt nisl in mi luctus viverra. Integer pulvinar ultricies varius.
+            Nam vitae magna eu tortor tincidunt posuere vel non est. Fusce id diam eu neque pellentesque
+            feugiat aliquet ut dui. Nullam odio libero, feugiat id dictum et, tincidunt eu orci.
+            Duis aliquam ut enim a dapibus. Maecenas et venenatis lacus, in rhoncus odio. Quisque iaculis nibh ut purus
+            sagittis,
+            eget iaculis orci consequat.
+        </p>
+    </div>
+    <ul>
+        <li *ngFor="let element of customerModel">
+            {{ element.nombre }}
+        </li>
+    </ul>
+</div>
